@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
+using FRSP_LINQ.Parsing;
 
 namespace FRSP_LINQ
 {
@@ -10,7 +10,7 @@ namespace FRSP_LINQ
     {
         static void Main(string[] args)
         {
-
+            var data = CSVParser.GetAllData();
         }
     }
 }
