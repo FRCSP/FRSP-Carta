@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.IO;
 using System.Reflection;
+using CsvHelper;
 
 namespace FRSP_LINQ.Parsing
 {
@@ -10,12 +11,17 @@ namespace FRSP_LINQ.Parsing
     {
         static string path = Assembly.GetExecutingAssembly().CodeBase + "/test.csv";
         static readonly string header = "TeamNumber,MatchNumber,WatchPosition,BallsAutoInner,BallsAutoOuter,BallsAutoLower,CrossedLine,BallsTeleopInner,BallsTeleopOuter,BallsTeleopLower,CanHang,CanLevel,WheelPosition,WheelRotation";
-        public static IEnumerable<T> GetAllData<T>()
+        
+        public static List<Robot> GetAllData()
         {
-            List<Robot> robots = new List<Robot>();
-            FileStream rs = new FileStream(path, FileMode.Open, FileAccess.Read, FileShare.Read);
-
-            rs.Close();
+            public static List<Robot> robots = new List<Robot>();
+            
+            using (TextReader reader = File.OpenText(path))
+            {
+                
+            }
+            
+            return robots;
         }
     }
 }
