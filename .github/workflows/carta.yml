@@ -1,0 +1,30 @@
+name: FRSP-Carta
+on:
+  push:
+    branches: 
+    - master
+    - dev
+  pull_request:
+    branches: 
+    - master
+
+jobs:
+  build:
+    name: Build
+    runs-on: [windows-latest]
+
+    steps:
+      - uses: actions/checkout@v1
+        name: Checkout Code
+
+      - name: Setup MSBuild path
+        uses: warrenbuckley/Setup-MSBuild@v1
+
+      - name: Setup NuGet
+        uses: NuGet/setup-nuget@v1.0.2
+
+      - name: Restore NuGet Packages
+        run: nuget restore FRSP-LINQ.sln
+
+      - name: Build FRSP
+        run: msbuild FRSP-LINQ.sln /p:Configuration=Debug /p:DeployOnBuild=false
