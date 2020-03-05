@@ -14,8 +14,8 @@ jobs:
     runs-on: [windows-latest]
 
     steps:
-      - uses: actions/checkout@v1
-        name: Checkout Code
+      - name: Checkout Code
+        uses: actions/checkout@v1
 
       - name: Setup MSBuild path
         uses: warrenbuckley/Setup-MSBuild@v1
@@ -26,5 +26,5 @@ jobs:
       - name: Restore NuGet Packages
         run: nuget restore FRSP-LINQ.sln
 
-      - name: Build FRSP
+      - name: Build FRSP-Carta
         run: msbuild FRSP-LINQ.sln /p:Configuration=Debug /p:DeployOnBuild=false
