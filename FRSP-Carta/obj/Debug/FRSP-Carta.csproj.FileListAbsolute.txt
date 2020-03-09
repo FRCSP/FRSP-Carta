@@ -1,0 +1,15 @@
+D:\Repositories\FRSP-Carta\FRSP-Carta\bin\Debug\FRSP-Carta.exe.config
+D:\Repositories\FRSP-Carta\FRSP-Carta\bin\Debug\FRSP-Carta.exe
+D:\Repositories\FRSP-Carta\FRSP-Carta\bin\Debug\FRSP-Carta.pdb
+D:\Repositories\FRSP-Carta\FRSP-Carta\obj\Debug\FRSP-Carta.csprojAssemblyReference.cache
+D:\Repositories\FRSP-Carta\FRSP-Carta\obj\Debug\MainWindow.g.cs
+D:\Repositories\FRSP-Carta\FRSP-Carta\obj\Debug\App.g.cs
+D:\Repositories\FRSP-Carta\FRSP-Carta\obj\Debug\FRSP-Carta_MarkupCompile.cache
+D:\Repositories\FRSP-Carta\FRSP-Carta\obj\Debug\FRSP-Carta_MarkupCompile.lref
+D:\Repositories\FRSP-Carta\FRSP-Carta\obj\Debug\MainWindow.baml
+D:\Repositories\FRSP-Carta\FRSP-Carta\obj\Debug\FRSP-Carta.g.resources
+D:\Repositories\FRSP-Carta\FRSP-Carta\obj\Debug\FRSP_Carta.Properties.Resources.resources
+D:\Repositories\FRSP-Carta\FRSP-Carta\obj\Debug\FRSP-Carta.csproj.GenerateResource.cache
+D:\Repositories\FRSP-Carta\FRSP-Carta\obj\Debug\FRSP-Carta.csproj.CoreCompileInputs.cache
+D:\Repositories\FRSP-Carta\FRSP-Carta\obj\Debug\FRSP-Carta.exe
+D:\Repositories\FRSP-Carta\FRSP-Carta\obj\Debug\FRSP-Carta.pdb
