@@ -7,9 +7,25 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        <TabControl Name="tbcform" Style="{StaticResource Style-TabControl-Main}">
+        <TabControl Name="tbcform" KeyDown="tbcform_KeyDown" > <!--Style="{StaticResource StyleTabControlMain}"-->
             <TabItem Header="Load" Name="tbiload">
-                <Label Content="1"></Label>
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Name="txtLoadTitle" Grid.ColumnSpan="3" VerticalAlignment="Top" HorizontalAlignment="Center" Text="Browse for a file to load" FontSize="30"/>
+                    <Button x:Name="btnLoadFile" Grid.Row="2" Grid.Column="1" Content="Browse" FontSize="22" Click="btnLoadFile_Click"/>
+                    <Label Name="lbl" Content="x"/>
+                </Grid>
             </TabItem>
             <TabItem Header="Plot" Name="tbiplot">
                 <Label Content="2"></Label>
@@ -17,8 +33,8 @@
         </TabControl>
     </Grid>
 
-    <Window.Resources>
-        <Style x:Key="Style-TabControl-Main" TargetType="{x:Type TabControl}">
+    <!--<Window.Resources>
+        <Style x:Name="StyleTabControlMain" x:Key="StyleTabControlMain" TargetType="{x:Type TabControl}">
             <Setter Property="SnapsToDevicePixels" Value="True"/>
             <Setter Property="Template">
                 <Setter.Value>
@@ -48,7 +64,7 @@
 
         <Style x:Key="Style-TabItem-Main" TargetType="{x:Type TabItem}">
             <Setter Property="MaxWidth" Value="100" />
-            <!--https://social.msdn.microsoft.com/forums/vstudio/en-US/df4f7fc3-f0ec-4ed1-a022-a32650e49cb3/how-to-wrap-header-text-in-tabcontrol-->
+            --><!--https://social.msdn.microsoft.com/forums/vstudio/en-US/df4f7fc3-f0ec-4ed1-a022-a32650e49cb3/how-to-wrap-header-text-in-tabcontrol--><!--
             <Setter Property="HeaderTemplate" >
                 <Setter.Value>
                     <DataTemplate>
@@ -57,5 +73,5 @@
                 </Setter.Value>
             </Setter>
         </Style>
-    </Window.Resources>
+    </Window.Resources>-->
 </Window>
