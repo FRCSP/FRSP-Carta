@@ -24,18 +24,36 @@ namespace FRSP_Carta
     {
         OpenFileDialog ofd = new OpenFileDialog();
         List<Robot> data = new List<Robot>();
+        static List<string> sorts = new List<string>
+        {
+            "Raw Score",
+            "Auto Score",
+            "Teleop Score",
+            "Can Use Control Panel",
+            "Can Climb",
+            "Can Level"
+        };
+
         public MainWindow()
         {
             InitializeComponent();
             tbiload.Width = tbcform.Width / 2;
             tbiplot.Width = tbcform.Width / 2;
+            cmbSort.ItemsSource = sorts;
         }
 
         private void btnLoadFile_Click(object sender, RoutedEventArgs e)
         {
             if (ofd.ShowDialog() == true)
             {
-                data = CSVImporter.Import(ofd.FileNames.First());
+                if (ofd.FileNames.First().Split('.').Last() == "csv")
+                {
+                    data = CSVImporter.Import(ofd.FileNames.First());
+                }
+                else
+                {
+                    MessageBox.Show("Please choose a CSV File");
+                }
             }
         }
 
@@ -49,7 +67,6 @@ namespace FRSP_Carta
             {
                 tbiload.IsSelected = true;
             }
-            lbl.Content = nameof(e.Key);
         }
     }
 }

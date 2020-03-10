@@ -67,6 +67,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="BindingSource.cs" />
     <Compile Include="CSVImport\CSVImporter.cs" />
     <Compile Include="CSVImport\Robot.cs" />
     <Compile Include="UniformTabPanel.cs" />
