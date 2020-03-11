@@ -24,6 +24,8 @@ namespace FRSP_Carta
     {
         OpenFileDialog ofd = new OpenFileDialog();
         List<Robot> data = new List<Robot>();
+        int autoBalls = 0;
+        int teleBalls = 0;
         static List<string> sorts = new List<string>
         {
             "Raw Score",
@@ -37,8 +39,6 @@ namespace FRSP_Carta
         public MainWindow()
         {
             InitializeComponent();
-            tbiload.Width = tbcform.Width / 2;
-            tbiplot.Width = tbcform.Width / 2;
             cmbSort.ItemsSource = sorts;
             
         }
@@ -62,7 +62,7 @@ namespace FRSP_Carta
         {
             if (e.Key == Key.D2)
             {
-                tbiplot.IsSelected = true;
+                tbilist.IsSelected = true;
             }
             if (e.Key == Key.D1)
             {

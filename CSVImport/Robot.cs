@@ -9,6 +9,8 @@ namespace FRSP_Carta.CSVImport
 {
     public class Robot
     {
+        public ScoreData ScoreInfo { get; set; }
+
         #region Autonomous
 
         [Index(5)]

@@ -28,7 +28,7 @@
                     <Button x:Name="btnLoadFile" Grid.Row="2" Grid.Column="2" Content="Browse" FontSize="22" Click="btnLoadFile_Click"/>
                 </Grid>
             </TabItem>
-            <TabItem Header="Plot" Name="tbiplot">
+            <TabItem Header="Plot" Name="tbilist">
                 <Grid>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="*"/>
@@ -47,11 +47,11 @@
 
                     <StackPanel Grid.Column="1" VerticalAlignment="Top">
                         <TextBlock TextAlignment="Center">Sort By:</TextBlock>
-                        <ComboBox Name="cmbSort">
+                        <ComboBox Name="cmbSort" SelectionChanged="CmbSort_SelectionChanged">
                         </ComboBox>
                     </StackPanel>
                     <DockPanel Grid.Row="1" Grid.ColumnSpan="5" Grid.RowSpan="5" LastChildFill="True">
-                        <ListView DockPanel.Dock="Top" ItemsSource="{Binding data}">
+                        <ListView DockPanel.Dock="Top" ItemsSource="{Binding data}" Name="LstList">
                             <ListView.View>
                                 <GridView>
                                     <GridViewColumn/>
