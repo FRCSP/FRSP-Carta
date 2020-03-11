@@ -40,6 +40,7 @@ namespace FRSP_Carta
             tbiload.Width = tbcform.Width / 2;
             tbiplot.Width = tbcform.Width / 2;
             cmbSort.ItemsSource = sorts;
+            
         }
 
         private void btnLoadFile_Click(object sender, RoutedEventArgs e)

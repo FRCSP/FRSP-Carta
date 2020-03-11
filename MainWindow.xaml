@@ -24,7 +24,7 @@
                         <ColumnDefinition Width="262*"/>
                         <ColumnDefinition Width="262*"/>
                     </Grid.ColumnDefinitions>
-                    <TextBlock Name="txtLoadTitle" Grid.ColumnSpan="3" VerticalAlignment="Top" HorizontalAlignment="Center" Text="Browse for a file to load" FontSize="30" Grid.Column="1" Margin="179,0,235,0"/>
+                    <TextBlock Name="txtLoadTitle" Grid.ColumnSpan="3" VerticalAlignment="Top" HorizontalAlignment="Center" Text="Browse for a file to load" FontSize="30" Grid.Column="1"/>
                     <Button x:Name="btnLoadFile" Grid.Row="2" Grid.Column="2" Content="Browse" FontSize="22" Click="btnLoadFile_Click"/>
                 </Grid>
             </TabItem>
@@ -48,11 +48,6 @@
                     <StackPanel Grid.Column="1" VerticalAlignment="Top">
                         <TextBlock TextAlignment="Center">Sort By:</TextBlock>
                         <ComboBox Name="cmbSort">
-                            <ComboBox.ItemTemplate>
-                                <DataTemplate>
-                                    <TextBlock Text="{Binding sorts}"/>
-                                </DataTemplate>
-                            </ComboBox.ItemTemplate>
                         </ComboBox>
                     </StackPanel>
                     <DockPanel Grid.Row="1" Grid.ColumnSpan="5" Grid.RowSpan="5" LastChildFill="True">
