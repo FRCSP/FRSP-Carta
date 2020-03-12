@@ -47,7 +47,7 @@
 
                     <StackPanel Grid.Column="1" VerticalAlignment="Top">
                         <TextBlock TextAlignment="Center">Sort By:</TextBlock>
-                        <ComboBox Name="cmbSort" SelectionChanged="CmbSort_SelectionChanged">
+                        <ComboBox Name="cmbSort">
                         </ComboBox>
                     </StackPanel>
                     <DockPanel Grid.Row="1" Grid.ColumnSpan="5" Grid.RowSpan="5" LastChildFill="True">

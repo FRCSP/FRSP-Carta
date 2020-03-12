@@ -67,7 +67,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="BindingSource.cs" />
+    <Compile Include="CSVImport\Class1.cs" />
     <Compile Include="CSVImport\CSVImporter.cs" />
     <Compile Include="CSVImport\Robot.cs" />
     <Compile Include="ScoreData.cs" />
