@@ -49,16 +49,44 @@
 
                     <StackPanel Grid.Column="1" VerticalAlignment="Top"/>
                     <DockPanel Grid.Row="0" Grid.ColumnSpan="5" Grid.RowSpan="5" LastChildFill="True">
-                        <ListView DockPanel.Dock="Top" Name="LstList">
+                        <ListView DockPanel.Dock="Top" Name="LstList" >
                             <ListView.View>
                                 <GridView>
-                                    <GridViewColumn Header="Team #" DisplayMemberBinding="{Binding TeamNumber}"/>
-                                    <GridViewColumn Header="Match #" DisplayMemberBinding="{Binding MatchNumber}"/>
-                                    <GridViewColumn Header="Auto Inner Cells" DisplayMemberBinding="{Binding BallsAutoInner}"/>
-                                    <GridViewColumn Header="Auto Outer Cells" DisplayMemberBinding="{Binding BallsAutoOuter}"/>
-                                    <GridViewColumn Header="Auto Lower Cells" DisplayMemberBinding="{Binding BallsAutoLower}"/>
-                                    <GridViewColumn Header="Crossed Line" DisplayMemberBinding="{Binding CrossedAutoLine}"/>
-                                    <GridViewColumn Header="Teleop Inner Cells" DisplayMemberBinding="{Binding BallsTeleopInner}"/>
+                                    <GridViewColumn DisplayMemberBinding="{Binding TeamNumber}">
+                                        <GridViewColumn.Header>
+                                            <GridViewColumnHeader Tag="Team #" Click="TeamNumberColumn_Click">Team #</GridViewColumnHeader>
+                                        </GridViewColumn.Header>
+                                    </GridViewColumn>
+                                    <GridViewColumn DisplayMemberBinding="{Binding MatchNumber}">
+                                        <GridViewColumn.Header>
+                                            <GridViewColumnHeader Tag="Match #">Match #</GridViewColumnHeader>
+                                        </GridViewColumn.Header>
+                                    </GridViewColumn>
+                                    <GridViewColumn DisplayMemberBinding="{Binding BallsAutoInner}">
+                                        <GridViewColumn.Header>
+                                            <GridViewColumnHeader Tag="BallsAutoInner">Auto Inner Cells</GridViewColumnHeader>
+                                        </GridViewColumn.Header>
+                                    </GridViewColumn>
+                                    <GridViewColumn DisplayMemberBinding="{Binding BallsAutoOuter}">
+                                        <GridViewColumn.Header>
+                                            <GridViewColumnHeader Tag="BallsAutoOuter" >Auto Outer Cells</GridViewColumnHeader>
+                                        </GridViewColumn.Header>
+                                    </GridViewColumn>
+                                    <GridViewColumn DisplayMemberBinding="{Binding BallsAutoLower}">
+                                        <GridViewColumn.Header>
+                                            <GridViewColumnHeader Tag="BallsAutoLower" >Auto Lower Cells</GridViewColumnHeader>
+                                        </GridViewColumn.Header>
+                                    </GridViewColumn>
+                                    <GridViewColumn DisplayMemberBinding="{Binding CrossedAutoLine}">
+                                        <GridViewColumn.Header>
+                                            <GridViewColumnHeader Tag="CrossedAutoLine">Crossed Line</GridViewColumnHeader>
+                                        </GridViewColumn.Header>
+                                    </GridViewColumn>
+                                    <GridViewColumn DisplayMemberBinding="{Binding BallsTeleopInner}">
+                                        <GridViewColumn.Header>
+                                            <GridViewColumnHeader Tag="BallsTeleopInner" >Teleop Inner Cells</GridViewColumnHeader>
+                                        </GridViewColumn.Header>
+                                    </GridViewColumn>
                                     <GridViewColumn Header="Teleop Outer Cells" DisplayMemberBinding="{Binding BallsTeleopOuter}"/>
                                     <GridViewColumn Header="Teleop Lower Cells" DisplayMemberBinding="{Binding BallsTeleopLower}"/>
                                     <GridViewColumn Header="Can Climb" DisplayMemberBinding="{Binding CanHang}"/>
@@ -73,48 +101,4 @@
             </TabItem>
         </TabControl>
     </Grid>
-
-    <!--<Window.Resources>
-        <Style x:Name="StyleTabControlMain" x:Key="StyleTabControlMain" TargetType="{x:Type TabControl}">
-            <Setter Property="SnapsToDevicePixels" Value="True"/>
-            <Setter Property="Template">
-                <Setter.Value>
-                    <ControlTemplate TargetType="{x:Type TabControl}">
-                        <Grid>
-                            <Grid.RowDefinitions>
-                                <RowDefinition Height="Auto"/>
-                                <RowDefinition Height="*"/>
-                            </Grid.RowDefinitions>
-
-                            <Border>
-                                <UniformGrid x:Name="HeaderPanel" IsItemsHost="True" 
-                                             Rows="1"/>
-                            </Border>
-
-                            <Border x:Name="Border" Grid.Row="1"
-                                    BorderThickness="{TemplateBinding BorderThickness}"
-                                    Background="{TemplateBinding Background}"
-                                    BorderBrush="{TemplateBinding BorderBrush}">
-                                <ContentPresenter x:Name="PART_SelectedContentHost" ContentSource="SelectedContent"/>
-                            </Border>
-                        </Grid>
-                    </ControlTemplate>
-                </Setter.Value>
-            </Setter>
-        </Style>
-
-        <Style x:Key="Style-TabItem-Main" TargetType="{x:Type TabItem}">
-            <Setter Property="MaxWidth" Value="100" />
-            -->
-    <!--https://social.msdn.microsoft.com/forums/vstudio/en-US/df4f7fc3-f0ec-4ed1-a022-a32650e49cb3/how-to-wrap-header-text-in-tabcontrol-->
-    <!--
-            <Setter Property="HeaderTemplate" >
-                <Setter.Value>
-                    <DataTemplate>
-                        <TextBlock Text="{Binding}" TextWrapping="Wrap" />
-                    </DataTemplate>
-                </Setter.Value>
-            </Setter>
-        </Style>
-    </Window.Resources>-->
 </Window>

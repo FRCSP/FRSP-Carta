@@ -12,8 +12,6 @@ namespace FRSP_Carta.CSVImport
 
         public MatchData MatchInfo { get; set; }
 
-        private static MatchData InternalMatchInfo { get; set; }
-
         #region Misc
         public int TeamNumber { get; set; }
 

@@ -74,5 +74,10 @@ namespace FRSP_Carta
                 tbiload.IsSelected = true;
             }
         }
+
+        private void TeamNumberColumn_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
