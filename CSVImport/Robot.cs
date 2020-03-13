@@ -9,12 +9,10 @@ namespace FRSP_Carta.CSVImport
 {
     public class Robot
     {
-        public Robot()
-        {
 
-        }
+        public MatchData MatchInfo { get; set; }
 
-        public ScoreData ScoreInfo { get; set; }
+        private static MatchData InternalMatchInfo { get; set; }
 
         #region Misc
         [Index(0)]
@@ -69,5 +67,11 @@ namespace FRSP_Carta.CSVImport
         [Index(13)]
         public bool WheelRotation { get; set; }
         #endregion
+
+        public void SetMatchInfo()
+        {
+
+        }
+
     }
 }

@@ -68,11 +68,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="CSVImport\Class1.cs" />
     <Compile Include="CSVImport\CSVImporter.cs" />
     <Compile Include="CSVImport\Robot.cs" />
-    <Compile Include="ScoreData.cs" />
-    <Compile Include="Sorts.cs" />
+    <Compile Include="MatchData.cs" />
     <Compile Include="UniformTabPanel.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>

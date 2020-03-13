@@ -35,7 +35,21 @@ namespace FRSP_Carta.CSVImport
                         CanHang = bool.Parse(fields[10]),
                         CanLevel = bool.Parse(fields[11]),
                         WheelPosition = bool.Parse(fields[12]),
-                        WheelRotation = bool.Parse(fields[13])
+                        WheelRotation = bool.Parse(fields[13]),
+                        MatchInfo = new MatchData(
+                            // auto
+                            int.Parse(fields[3]) * 6 + 
+                            int.Parse(fields[4]) * 4 + 
+                            int.Parse(fields[5]) * 2, 
+                            
+                            // tele
+                            int.Parse(fields[7]) * 3 + 
+                            int.Parse(fields[8]) * 2 + 
+                            int.Parse(fields[9]) * 1,
+
+                            bool.Parse(fields[12]),
+                            bool.Parse(fields[13])
+                            )                        
                     });
                 }
                 catch (Exception e)

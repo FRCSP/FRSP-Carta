@@ -49,14 +49,14 @@
 
                     <StackPanel Grid.Column="1" VerticalAlignment="Top">
                         <TextBlock TextAlignment="Center">Sort By:</TextBlock>
-                        <ComboBox Name="cmbSort">
+                        <ComboBox Name="cmbSort" SelectionChanged="CmbSort_SelectionChanged" SelectedIndex="0">
                         </ComboBox>
                     </StackPanel>
                     <DockPanel Grid.Row="1" Grid.ColumnSpan="5" Grid.RowSpan="5" LastChildFill="True">
-                        <ListView DockPanel.Dock="Top" ItemsSource="{Binding data}" Name="LstList">
+                        <ListView DockPanel.Dock="Top" Name="LstList">
                             <ListView.View>
                                 <GridView>
-                                    <GridViewColumn/>
+                                    <GridViewColumn Header="Team #" DisplayMemberBinding="{Binding TeamNumber}"/>
                                 </GridView>
                             </ListView.View>
                         </ListView>
