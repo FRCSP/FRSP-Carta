@@ -14,17 +14,6 @@ namespace FRSP_Carta.CSVImport
 
         }
 
-        
-        public Robot (int _teamNumber, int _matchNumber, string _watchPos, 
-            int _ballsAutoInner, int _ballsAutoOuter, int _ballsAutoLower,
-            int ballsTeleopInner, int ballsTeleopOuter, int ballsTeleopLower,
-            bool hang, bool level, bool rotation, bool position)
-        {
-            TeamNumber = _teamNumber;
-            MatchNumber = _matchNumber;
-            WatchPosition = _watchPos;
-        }
-
         public ScoreData ScoreInfo { get; set; }
 
         #region Misc

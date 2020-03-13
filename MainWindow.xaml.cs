@@ -49,13 +49,19 @@ namespace FRSP_Carta
             {
                 if (ofd.FileNames.First().Split('.').Last() == "csv")
                 {
-                    data = CSVImporter.Import(ofd.FileNames.First());
+                    data = CSVImporter.Parse(ofd.FileName);
+                    txtImportStatus.Text = "Imported";
                 }
                 else
                 {
                     MessageBox.Show("Please choose a CSV File");
                 }
             }
+        }
+
+        public static void LogEx(string ex)
+        {
+            MessageBox.Show(ex);
         }
 
         private void tbcform_KeyDown(object sender, KeyEventArgs e)
