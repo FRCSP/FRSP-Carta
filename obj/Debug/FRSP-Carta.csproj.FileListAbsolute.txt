@@ -70,17 +70,8 @@ D:\Repositories\FRSP-Carta\obj\Debug\FRSP-Carta.pdb
 D:\Repositories\FRSP-Carta\bin\Debug\FRSP-Carta.exe.config
 D:\Repositories\FRSP-Carta\bin\Debug\FRSP-Carta.exe
 D:\Repositories\FRSP-Carta\bin\Debug\FRSP-Carta.pdb
-D:\Repositories\FRSP-Carta\bin\Debug\CsvHelper.dll
-D:\Repositories\FRSP-Carta\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
-D:\Repositories\FRSP-Carta\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
-D:\Repositories\FRSP-Carta\bin\Debug\System.Threading.Tasks.Extensions.dll
-D:\Repositories\FRSP-Carta\bin\Debug\CsvHelper.xml
-D:\Repositories\FRSP-Carta\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
-D:\Repositories\FRSP-Carta\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
-D:\Repositories\FRSP-Carta\bin\Debug\System.Threading.Tasks.Extensions.xml
 D:\Repositories\FRSP-Carta\obj\Debug\MainWindow.baml
 D:\Repositories\FRSP-Carta\obj\Debug\FRSP-Carta.g.resources
 D:\Repositories\FRSP-Carta\obj\Debug\FRSP_Carta.Properties.Resources.resources
 D:\Repositories\FRSP-Carta\obj\Debug\FRSP-Carta.csproj.GenerateResource.cache
 D:\Repositories\FRSP-Carta\obj\Debug\FRSP-Carta.csproj.CoreCompileInputs.cache
-D:\Repositories\FRSP-Carta\obj\Debug\FRSP-Carta.csproj.CopyComplete

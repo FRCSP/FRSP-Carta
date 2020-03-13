@@ -24,8 +24,6 @@ namespace FRSP_Carta
     {
         OpenFileDialog ofd = new OpenFileDialog();
         List<Robot> data = new List<Robot>();
-        int autoBalls = 0;
-        int teleBalls = 0;
         static List<string> sorts = new List<string>
         {
             "Raw Score",
@@ -39,7 +37,6 @@ namespace FRSP_Carta
         public MainWindow()
         {
             InitializeComponent();
-            cmbSort.ItemsSource = sorts;
             
         }
 
@@ -75,36 +72,6 @@ namespace FRSP_Carta
             if (e.Key == Key.D1)
             {
                 tbiload.IsSelected = true;
-            }
-        }
-
-        private void CmbSort_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            ComboBox cmb = sender as ComboBox;
-
-            switch ((string)cmb.SelectedItem)
-            {
-                case "Raw Score":
-                    data.Sort((x, y) => x.MatchInfo.RawScore.CompareTo(y.MatchInfo.RawScore));
-                    break;
-                case "Auto Score":
-                    data.Sort((x, y) => x.MatchInfo.AutoScore.CompareTo(y.MatchInfo.AutoScore));
-                    break;
-                case "Teleop Score":
-                    data.Sort((x, y) => x.MatchInfo.TeleScore.CompareTo(y.MatchInfo.TeleScore));
-                    break;
-                case "Can Use Control Panel":
-                    data.Sort((x, y) => x.MatchInfo.RawScore.CompareTo(y.MatchInfo.RawScore));
-                    break;
-                case "Can Climb":
-                    data.Sort((x, y) => x.MatchInfo.RawScore.CompareTo(y.MatchInfo.RawScore));
-                    break;
-                case "Can Level":
-                    data.Sort((x, y) => x.MatchInfo.RawScore.CompareTo(y.MatchInfo.RawScore));
-                    break;
-                default:
-                    data.Sort((x, y) => x.MatchInfo.RawScore.CompareTo(y.MatchInfo.RawScore));
-                    break;
             }
         }
     }
