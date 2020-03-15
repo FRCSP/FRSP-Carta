@@ -13,6 +13,7 @@ namespace FRSP_Carta.CSVImport
 
         public static List<Robot> Parse(string filepath)
         {
+            robots.Clear();
             var lines = File.ReadAllLines(filepath).ToList();
             lines.RemoveAt(0);
             foreach(string line in lines)

@@ -1,19 +1,14 @@
 ﻿using Microsoft.Win32;
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
 using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 using FRSP_Carta.CSVImport;
+using FRSP_Carta.UI;
+using System.Windows.Documents;
+using System.ComponentModel;
+using System.Windows.Media;
 
 namespace FRSP_Carta
 {
@@ -23,7 +18,9 @@ namespace FRSP_Carta
     public partial class MainWindow : Window
     {
         OpenFileDialog ofd = new OpenFileDialog();
-        List<Robot> data = new List<Robot>();
+        public static List<Robot> data = new List<Robot>();
+        private GridViewColumnHeader listViewSortCol = null;
+        private SortAdorner listViewSortAdorner = null;
         static List<string> sorts = new List<string>
         {
             "Raw Score",
@@ -37,19 +34,24 @@ namespace FRSP_Carta
         public MainWindow()
         {
             InitializeComponent();
-            
+            dtgData.IsReadOnly = true;
+            dtgData.BorderBrush = Brushes.White;
         }
 
         private void btnLoadFile_Click(object sender, RoutedEventArgs e)
         {
             if (ofd.ShowDialog() == true)
             {
+                MessageBox.Show(Width.ToString());
                 if (ofd.FileNames.First().Split('.').Last() == "csv")
                 {
+                    dtgData.ItemsSource = null;
+                    dtgData.Items.Clear();
+                    data.Clear();
                     data = CSVImporter.Parse(ofd.FileName);
                     txtImportStatus.Text = "Imported";
                     tbilist.IsSelected = true;
-                    LstList.ItemsSource = data;
+                    dtgData.ItemsSource = data;
                 }
                 else
                 {
@@ -75,9 +77,23 @@ namespace FRSP_Carta
             }
         }
 
-        private void TeamNumberColumn_Click(object sender, RoutedEventArgs e)
+        private void DtgData_AutoGeneratingColumn(object sender, DataGridAutoGeneratingColumnEventArgs e)
         {
+            PropertyDescriptor pd = e.PropertyDescriptor as PropertyDescriptor;
+            e.Column.Header = pd.DisplayName;
+            if (pd.DisplayName == "MatchInfo")
+            {
+                e.Cancel = true;
+            }
+        }
 
+        private void tbcform_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            TabControl control = sender as TabControl;
+            if (control.SelectedItem == tbiload)
+            {
+                tbilist.IsSelected = false;
+            }
         }
     }
 }

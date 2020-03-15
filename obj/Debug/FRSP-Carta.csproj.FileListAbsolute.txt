@@ -65,4 +65,3 @@ D:\Repositories\FRSP-Carta\obj\Debug\MainWindow.baml
 D:\Repositories\FRSP-Carta\obj\Debug\FRSP-Carta.g.resources
 D:\Repositories\FRSP-Carta\obj\Debug\FRSP_Carta.Properties.Resources.resources
 D:\Repositories\FRSP-Carta\obj\Debug\FRSP-Carta.csproj.GenerateResource.cache
-D:\Repositories\FRSP-Carta\obj\Debug\FRSP-Carta.csproj.CoreCompileInputs.cache

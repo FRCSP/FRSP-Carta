@@ -5,9 +5,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:FRSP_Carta"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="1040">
+        Title="MainWindow" Height="450" Width="1235">
     <Grid>
-        <TabControl Name="tbcform" KeyDown="tbcform_KeyDown" >
+        <TabControl Name="tbcform" KeyDown="tbcform_KeyDown" SelectionChanged="tbcform_SelectionChanged" >
             <!--Style="{StaticResource StyleTabControlMain}"-->
             <TabItem Header="Load" Name="tbiload">
                 <Grid>
@@ -47,56 +47,82 @@
                         <RowDefinition Height="*"/>
                     </Grid.RowDefinitions>
 
-                    <StackPanel Grid.Column="1" VerticalAlignment="Top"/>
-                    <DockPanel Grid.Row="0" Grid.ColumnSpan="5" Grid.RowSpan="5" LastChildFill="True">
-                        <ListView DockPanel.Dock="Top" Name="LstList" >
+                    <DataGrid Name="dtgData" HorizontalAlignment="Stretch" AutoGeneratingColumn="DtgData_AutoGeneratingColumn" Grid.Row="0" Grid.ColumnSpan="5" Grid.RowSpan="5" ItemsSource="{Binding data}">
+                        
+                    </DataGrid>
+                    <!--<DockPanel Grid.Row="0" Grid.ColumnSpan="5" Grid.RowSpan="5" LastChildFill="True">
+                        <ListView DockPanel.Dock="Top" Name="lstList" >
                             <ListView.View>
                                 <GridView>
                                     <GridViewColumn DisplayMemberBinding="{Binding TeamNumber}">
                                         <GridViewColumn.Header>
-                                            <GridViewColumnHeader Tag="Team #" Click="TeamNumberColumn_Click">Team #</GridViewColumnHeader>
+                                            <GridViewColumnHeader Tag="Team #" Click="TeamNumberColumnHeader_Click">Team #</GridViewColumnHeader>
                                         </GridViewColumn.Header>
                                     </GridViewColumn>
                                     <GridViewColumn DisplayMemberBinding="{Binding MatchNumber}">
                                         <GridViewColumn.Header>
-                                            <GridViewColumnHeader Tag="Match #">Match #</GridViewColumnHeader>
+                                            <GridViewColumnHeader Tag="Match #" Click="MatchNumberColumnHeader_Click">Match #</GridViewColumnHeader>
                                         </GridViewColumn.Header>
                                     </GridViewColumn>
                                     <GridViewColumn DisplayMemberBinding="{Binding BallsAutoInner}">
                                         <GridViewColumn.Header>
-                                            <GridViewColumnHeader Tag="BallsAutoInner">Auto Inner Cells</GridViewColumnHeader>
+                                            <GridViewColumnHeader Tag="BallsAutoInner" Click="BallsAutoInnerColumnHeader_Click">Auto Inner Cells</GridViewColumnHeader>
                                         </GridViewColumn.Header>
                                     </GridViewColumn>
                                     <GridViewColumn DisplayMemberBinding="{Binding BallsAutoOuter}">
                                         <GridViewColumn.Header>
-                                            <GridViewColumnHeader Tag="BallsAutoOuter" >Auto Outer Cells</GridViewColumnHeader>
+                                            <GridViewColumnHeader Tag="BallsAutoOuter" Click="BallsAutoOuterColumnHeader_Click">Auto Outer Cells</GridViewColumnHeader>
                                         </GridViewColumn.Header>
                                     </GridViewColumn>
                                     <GridViewColumn DisplayMemberBinding="{Binding BallsAutoLower}">
                                         <GridViewColumn.Header>
-                                            <GridViewColumnHeader Tag="BallsAutoLower" >Auto Lower Cells</GridViewColumnHeader>
+                                            <GridViewColumnHeader Tag="BallsAutoLower" Click="BallsAutoLowerColumnHeader_Click">Auto Lower Cells</GridViewColumnHeader>
                                         </GridViewColumn.Header>
                                     </GridViewColumn>
                                     <GridViewColumn DisplayMemberBinding="{Binding CrossedAutoLine}">
                                         <GridViewColumn.Header>
-                                            <GridViewColumnHeader Tag="CrossedAutoLine">Crossed Line</GridViewColumnHeader>
+                                            <GridViewColumnHeader Tag="CrossedAutoLine" Click="CrossedAutoLineColumnHeader_Click">Crossed Line</GridViewColumnHeader>
                                         </GridViewColumn.Header>
                                     </GridViewColumn>
                                     <GridViewColumn DisplayMemberBinding="{Binding BallsTeleopInner}">
                                         <GridViewColumn.Header>
-                                            <GridViewColumnHeader Tag="BallsTeleopInner" >Teleop Inner Cells</GridViewColumnHeader>
+                                            <GridViewColumnHeader Tag="BallsTeleopInner" Click="BallsTeleopInnerColumnHeader_Click">Teleop Inner Cells</GridViewColumnHeader>
                                         </GridViewColumn.Header>
                                     </GridViewColumn>
-                                    <GridViewColumn Header="Teleop Outer Cells" DisplayMemberBinding="{Binding BallsTeleopOuter}"/>
-                                    <GridViewColumn Header="Teleop Lower Cells" DisplayMemberBinding="{Binding BallsTeleopLower}"/>
-                                    <GridViewColumn Header="Can Climb" DisplayMemberBinding="{Binding CanHang}"/>
-                                    <GridViewColumn Header="Can Level" DisplayMemberBinding="{Binding CanLevel}"/>
-                                    <GridViewColumn Header="Wheel Position" DisplayMemberBinding="{Binding WheelPosition}"/>
-                                    <GridViewColumn Header="Wheel Rotation" DisplayMemberBinding="{Binding WheelRotation}"/>
+                                    <GridViewColumn DisplayMemberBinding="{Binding BallsTeleopOuter}">
+                                        <GridViewColumn.Header>
+                                            <GridViewColumnHeader Tag="BallsTeleopOuter" Click="BallsTeleopOuterColumnHeader_Click">Teleop Outer Cells</GridViewColumnHeader>
+                                        </GridViewColumn.Header>
+                                    </GridViewColumn>
+                                    <GridViewColumn DisplayMemberBinding="{Binding BallsTeleopLower}">
+                                        <GridViewColumn.Header>
+                                            <GridViewColumnHeader Tag="BallsTeleopLower" Click="BallsTeleopLowerColumnHeader_Click" >Teleop Lower Cells</GridViewColumnHeader>
+                                        </GridViewColumn.Header>
+                                    </GridViewColumn>
+                                    <GridViewColumn DisplayMemberBinding="{Binding WheelRotation}">
+                                        <GridViewColumn.Header>
+                                            <GridViewColumnHeader Tag="WheelRotation" Click="WheelRotationColumnHeader_Click">Wheel Rotation</GridViewColumnHeader>
+                                        </GridViewColumn.Header>
+                                    </GridViewColumn>
+                                    <GridViewColumn DisplayMemberBinding="{Binding WheelPosition}">
+                                        <GridViewColumn.Header>
+                                            <GridViewColumnHeader Tag="WheelPosition" Click="WheelPositionColumnHeader_Click">Wheel Position</GridViewColumnHeader>
+                                        </GridViewColumn.Header>
+                                    </GridViewColumn>
+                                    <GridViewColumn DisplayMemberBinding="{Binding CanHang}">
+                                        <GridViewColumn.Header>
+                                            <GridViewColumnHeader Tag="CanHang" Click="CanHangColumnHeader_Click">Can Hang</GridViewColumnHeader>
+                                        </GridViewColumn.Header>
+                                    </GridViewColumn>
+                                    <GridViewColumn DisplayMemberBinding="{Binding CanLevel}">
+                                        <GridViewColumn.Header>
+                                            <GridViewColumnHeader Tag="CanLevel" Click="CanLevelColumnHeader_Click">Can Level</GridViewColumnHeader>
+                                        </GridViewColumn.Header>
+                                    </GridViewColumn>
                                 </GridView>
                             </ListView.View>
                         </ListView>
-                    </DockPanel>
+                    </DockPanel>-->
                 </Grid>
             </TabItem>
         </TabControl>
